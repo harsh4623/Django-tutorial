@@ -1,0 +1,56 @@
+## Laying the pipeline -> We are making the textutils website
+
+1. in the views.py
+create a diiferent function
+
+2. in the urls.py
+cretae a urls mapping for each views function
+
+3. then create a template folder inside the project
+- then create a index.html file 
+
+4. Find 'DIRS' in settings.py. Write "templates" inside the double quotes in DIRS. 
+This is the folder where we will keep our HTML template files
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ["templates"],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            # ... some options here ...
+        },
+    },
+]
+
+5. Now create a analyze function inside the views.py
+6. then create a analyse.html file
+
+def analyze(request):
+
+    # Get the text
+    djtext = request.GET.get('text', 'default')
+    analyzed=djtext
+    params = {'purpose': "Removing Punctuations", 'analyzed_text': analyzed}
+    return render(request,'analyze.html',params)
+
+inside the analyse.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyzing Your Text...</title>
+</head>
+<body>
+<h1>Your Analyzed Text - {{ purpose }}</h1>
+<p>
+    {{ analyzed_text }}
+</p>
+</body>
+</html>
+
+:- give action method get and url for analyse
+
+
+:- here at a time we can analyze only one function at a time

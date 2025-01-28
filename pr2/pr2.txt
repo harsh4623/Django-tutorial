@@ -1,0 +1,49 @@
+1. Start a new  project:- pr2
+django-admin startproject pr2
+
+2. cd pr2
+3. create a file -> views.py
+
+4. Now create a functions in views.py
+
+def index(request):
+    return HttpResponse('''Harry django CodeWithHarry''')
+
+def about(request):
+    return HttpResponse("About HarryBhai")
+
+First of all, we have imported the HttpResponse object from django.http module.
+Whenever a user requests a page, Django creates an HttpRequest object that contains the metadata of the request.
+ After creating an HttpRequest object, Django passes this object inside the view function as the first argument. 
+Hence, a specific HttpResponse is generated for each view function.
+
+5. Now open the urls.py file and define diff urls
+
+so first 
+from . import views -> means we are in same dir so we import views from It
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.index,name='index'),
+    path('about/',views.about,name='about'),
+]
+
+What is the path function?
+
+    Path function is contained within the django.urls module.
+    It helps in routing URLs to the appropriate view function within a Django project.
+
+Now, let's discuss the arguments passed in the path function.
+
+      1. about/: It is the endpoint of the URL. 
+
+         Example: Let's suppose a user tries to access https://www.codewithharry.com/blog/. 
+         In this URL, 'blog' is the endpoint. 
+
+       2. views.about: It is the function defined in the views.py file. 
+       Here, we pass the function that should be executed whenever someone tries to access 
+       our website's 'about' page. 
+
+       3. name='about': It is the name of the path. 
+       Naming a path will help us to access it from anywhere in our project. 
+       In the future, we will see how to access a path from templates.

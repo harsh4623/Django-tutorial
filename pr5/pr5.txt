@@ -1,0 +1,5 @@
+# adding bootstrap to our project
+
+After copying the starter template, open the index.html file, and paste the starter template. You can also copy the starter template from below :
+
+:- After adding a starter template, it's time to include the navigation bar on our website. Click here and copy the navbar of your choice. Below is the code for the one that I am using :
