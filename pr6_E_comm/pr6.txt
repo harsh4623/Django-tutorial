@@ -1,0 +1,29 @@
+# First create a project 
+    :- django-admin startproject <pro_name>
+
+# then create django apps
+Syntax:- python manage.py startapp <app_name>
+
+#  so i create a shop and blog app
+
+:- Now, we will create views and URLs of the shop app.
+
+:- create diff views function
+:- now go to settings.py and inside the INSTALLED_APPS -> include the 'blog' and 'shop'
+
+:- then go to shop folder and inside that create a template folder
+    inside template folder create a shop folder
+    then create a index.html file
+
+    shop -> template -> shop -> index.html
+
+:- now go to bootstrap and copy the starter code and paste it in index.html
+
+:- inside the settings.py include the TEMPLATE_DIR
+
+:- django superuser
+uname:- harshp
+pwd:- patel463
+
+
+
